@@ -29,8 +29,20 @@ public class ConfigReader {
         }
     }
 
+    /**
+     * Reads a configuration value, allowing command-line overrides.
+     *
+     * @param key configuration property name
+     * @return configured value
+     */
     public static String getProperty(String key) {
-        String value = properties.getProperty(key);
+
+        // System properties take precedence over the properties file.
+        String value = System.getProperty(key);
+
+        if (value == null || value.isBlank()) {
+            value = properties.getProperty(key);
+        }
 
         if (value == null || value.isBlank()) {
             throw new IllegalArgumentException(
@@ -40,4 +52,7 @@ public class ConfigReader {
 
         return value.trim();
     }
+
+
+
 }
