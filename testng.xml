@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- Defines the test suite executed by TestNG. -->
+<suite name="Selenium Automation Suite">
+
+    <test name="UI and Configuration Tests">
+        <classes>
+            <class name="com.automation.tests.BrowserTest"/>
+            <class name="com.automation.tests.LoginTest"/>
+            <class name="com.automation.tests.ConfigReaderTest"/>
+        </classes>
+    </test>
+
+</suite>
